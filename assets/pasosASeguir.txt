@@ -1,0 +1,12 @@
+1. Diseñar base de datos.
+2. Maquetación.
+3. Montar estructura MVC.
+4. Registro usuario.
+5. Hacer el login a usuarios.
+6. Gestionar usuarios.
+7. Gestionar entradas para usuarios.
+8. listar productos.
+9. listar productos en la página de categorias.
+10. Hacer el carrito.
+11. Gestionar pedidos para administradores.
+13. Poder cambiar el estado de los pedidos.
