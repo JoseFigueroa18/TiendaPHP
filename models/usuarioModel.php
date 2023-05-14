@@ -118,6 +118,26 @@ class usuarioModel {
         return $result;
     }
 
+    public function login(){
+        $result = false;
+        $email = $this->getEmail();
+        $password = $this->getPassword();
+        //Comprobar si existe el usuario
+        $sql = "SELECT * FROM usuarios WHERE email = '$email'";
+        $login = $this->db->query($sql);
+
+        if ($login && $login->num_rows==1) {
+            $usuario = $login->fetch_object();
+
+            $verify = password_verify($password, $usuario->password);
+
+            if ($verify) {
+                $result = $usuario;
+            }
+        }
+        return $result;
+    }
+
 
 
 }

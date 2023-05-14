@@ -42,6 +42,18 @@ class usuarioController{
         }
         header("Location:".base_url.'usuario/registro');
     }
+    public function login(){
+        if(isset($_POST)){
+            //Identificar al usuario
+            //Consulta base de datos
+            $usuario = new usuarioModel();
+            $usuario->setEmail($_POST['email']);
+            $usuario->setPassword($_POST['password']);
+            $identity = $usuario->login();
+
+        }
+        header("Location:".base_url);
+    }
 
 }
 

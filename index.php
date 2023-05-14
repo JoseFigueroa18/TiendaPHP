@@ -15,7 +15,7 @@ function showError(){
 
 if(isset($_GET['controller'])){
     $nombreControlador = $_GET['controller'].'Controller';
-}elseif(!isset($GET['controller']) && !isset($GET['action'])){
+}elseif(!isset($_GET['controller']) && !isset($_GET['action'])){
     $nombreControlador = controller_default;
 }else{
     showError();
@@ -28,7 +28,7 @@ if(class_exists($nombreControlador)){
     if(isset($_GET['action']) && method_exists($controlador, $_GET['action'])){
         $action = $_GET['action'];
         $controlador->$action();
-    }elseif(!isset($GET['controller']) && !isset($GET['action'])){
+    }elseif(!isset($_GET['controller']) && !isset($_GET['action'])){
         $action_default = action_default;
         $controlador-> $action_default();
     }else {
