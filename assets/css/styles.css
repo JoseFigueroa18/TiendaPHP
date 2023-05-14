@@ -6,7 +6,9 @@
     font-family: sans-serif, Helvetica, Arial;
 }
 
-
+body{
+    background: url(../img/bg.png);
+}
 
 a{
     color: #01B1EA;
@@ -170,10 +172,25 @@ td{
 }
 
 #lateral ul li{
-    list-style: square;
+    list-style: none;
     margin-left: 20px;
     margin-top: 5px;
     margin-bottom: 5px;
+    display: block;
+    border-radius: 2px;
+    width: auto;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 20px;
+    color: white;
+    background: #2979CD;
+    border: 1px solid #11608E;
+    cursor:pointer;
+}
+
+#lateral ul li a{
+    color: white; /* Establece el color del texto en blanco */
+    text-decoration: none; /* Elimina la subrayado del enlace */
 }
 
 /*FORMS*/
@@ -400,7 +417,7 @@ button{
 .button-pedido{
     display: block;
     float: right;
-    width: 100px;
+    width: 70px;
 }
 
 .updown-unidades{
@@ -415,3 +432,27 @@ button{
     padding:2px;
     margin: 7px;
 }
+
+
+/*COLORES*/
+
+.color-verde{
+    background: green !important;
+}
+
+.color-rojo{
+    background: red !important;
+}
+
+.color-naranja{
+    background: orange !important;
+}
+
+.color-azul{
+    background: blue !important;
+}
+
+
+/*CARRITO LAYOUT*/
+
+

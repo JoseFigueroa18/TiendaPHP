@@ -1,5 +1,5 @@
-CREATE DATABASE tienda;
-USE tienda;
+CREATE DATABASE tienda_master;
+USE tienda_master;
 
 CREATE TABLE usuarios(
 id              int(255) auto_increment not null,
@@ -10,14 +10,21 @@ password        varchar(255) not null,
 rol             varchar(20),
 imagen          varchar(255),
 CONSTRAINT pk_usuarios PRIMARY KEY(id),
-CONSTRAINT uq_email UNIQUE(email)  /*Solo puede haber un registro con el mismo email*/
+CONSTRAINT uq_email UNIQUE(email)  
 )ENGINE=InnoDb;
+
+INSERT INTO usuarios VALUES(NULL, 'Admin', 'Admin', 'admin@admin.com', 'contraseña', 'admin', null);
 
 CREATE TABLE categorias(
 id              int(255) auto_increment not null,
 nombre          varchar(100) not null,
 CONSTRAINT pk_categorias PRIMARY KEY(id) 
 )ENGINE=InnoDb;
+
+INSERT INTO categorias VALUES(null, 'Manga corta');
+INSERT INTO categorias VALUES(null, 'Tirantes');
+INSERT INTO categorias VALUES(null, 'Manga larga');
+INSERT INTO categorias VALUES(null, 'Sudaderas');
 
 CREATE TABLE productos(
 id              int(255) auto_increment not null,
@@ -33,6 +40,7 @@ CONSTRAINT pk_categorias PRIMARY KEY(id),
 CONSTRAINT fk_producto_categoria FOREIGN KEY(categoria_id) REFERENCES categorias(id)
 )ENGINE=InnoDb;
 
+
 CREATE TABLE pedidos(
 id              int(255) auto_increment not null,
 usuario_id      int(255) not null,
@@ -47,8 +55,6 @@ CONSTRAINT pk_pedidos PRIMARY KEY(id),
 CONSTRAINT fk_pedido_usuario FOREIGN KEY(usuario_id) REFERENCES usuarios(id)
 )ENGINE=InnoDb;
 
-
-/*Tabla puente entre pedidos y productos, sirve como relación de muchos a muchos*/
 CREATE TABLE lineas_pedidos(
 id              int(255) auto_increment not null,
 pedido_id       int(255) not null,
@@ -62,3 +68,4 @@ CONSTRAINT fk_linea_producto FOREIGN KEY(producto_id) REFERENCES productos(id)
 
 
 
+SELECT* FROM usuarios;

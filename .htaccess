@@ -1,7 +1,7 @@
 <IfModule mod_rewrite.c>
 # Activar rewrite
 RewriteEngine on
-ErrorDocument 404 http://localhost/master-php/tiendaVirtual/error/index
+ErrorDocument 404 http://localhost/master-php/TiendaPHP/error/index
 
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f

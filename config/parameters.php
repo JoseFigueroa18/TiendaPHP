@@ -1,7 +1,5 @@
-<?php 
-
-define("base_url", "http://localhost/master-php/tiendaVirtual/");
+<?php
+define("base_url", "http://localhost/master-php/TiendaPHP/");
 define("controller_default", "productoController");
 define("action_default", "index");
 
-?>

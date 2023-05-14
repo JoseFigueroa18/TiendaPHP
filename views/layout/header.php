@@ -1,47 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tienda</title>
-    <link rel="stylesheet" href="<?=base_url?>assets/css/styles.css">
-</head>
-<body>
-    <div id= "container">
-    <!-- CABECERA -->
-    <header id="header">
-        <div id="logo">
-            <img src="<?=base_url?>assets/img/camiseta.png" alt="Camiseta Logo">
-            <a href="index.html"> 
-                Tienda de camisetas
-            </a>
-        </div>
-    </header>
+<!DOCTYPE HTML>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<title>Tienda de Camisetas</title>
+		<link rel="stylesheet" href="<?=base_url?>assets/css/styles.css" />
+	</head>
+	<body>
+		<div id="container">
+			<!-- CABECERA -->
+			<header id="header">
+				<div id="logo">
+					<img src="<?=base_url?>assets/img/camiseta.png" alt="Camiseta Logo" />
+					<a href="<?=base_url?>">
+						Tienda de camisetas
+					</a>
+				</div>
+			</header>
 
-    <!-- MENU -->
-    <nav id="menu">
-        <ul>
-            <li>
-                <a href="index.html">Inicio</a>
-            </li>
-            <li>
-                <a href="index.html">Categoria 1</a>
-            </li>
-            <li>
-                <a href="index.html">Categoria 2</a>
-            </li>
-            <li>
-                <a href="index.html">Categoria 3</a>
-            </li>
-            <li>
-                <a href="index.html">Categoria 4</a>
-            </li>
-            <li>
-                <a href="index.html">Categoria 5</a>
-            </li>
-        </ul>
-    </nav>
+			<!-- MENU -->
+			<?php $categorias = Utils::showCategorias(); ?>
+			<nav id="menu">
+				<ul>
+					<li>
+						<a href="<?=base_url?>">Inicio</a>
+					</li>
+					<?php while($cat = $categorias->fetch_object()): ?>
+						<li>
+							<a href="<?=base_url?>categoria/ver&id=<?=$cat->id?>"><?=$cat->nombre?></a>
+						</li>
+					<?php endwhile; ?>
+				</ul>
+			</nav>
 
-
-    <div id="content">
+			<div id="content">
